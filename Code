@@ -1,0 +1,30 @@
+function getSleepHours(day)  {
+  
+  var hours = prompt('How many hours of sleep did you get' + day +'?');
+  return Number(hours);
+};
+
+function getActualSleepHours() {
+  return getSleepHours(' Monday') + getSleepHours(' Tuesday') + getSleepHours(' Wednesday') + getSleepHours(' Thursday') + getSleepHours(' Friday') + getSleepHours(' Saturday') + getSleepHours(' Sunday');
+};
+
+function getIdealSleepHours() {
+ var getIdealHours = prompt('How much sleep is ideal per night?');
+  return Number(getIdealHours) * 7;
+};
+
+function calculateSleepDebt() {
+  var actualSleepHours = getActualSleepHours();
+  var idealSleepHours = getIdealSleepHours();
+  if (actualSleepHours === idealSleepHours) {
+    console.log('User got perfect amount of sleep!');
+  };
+    if (actualSleepHours > idealSleepHours) {
+      console.log('You got ' + (actualSleepHours + idealSleepHours) + ' hours more sleep than desired. User got more sleep than desired');
+    };
+      if (actualSleepHours < idealSleepHours) {
+        console.log('You got ' + (idealSleepHours - actualSleepHours) + ' hours less sleep than desired. User should rest more');
+      };  
+    };
+  
+calculateSleepDebt();
